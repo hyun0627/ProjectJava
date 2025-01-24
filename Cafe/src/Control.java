@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-
+ 
 public class Control {  
 	// 모든 아래에 있는 메소드에 사용하기 위해서는 위에다가 선언해주어야 함
 	static Scanner sc = new Scanner(System.in);
