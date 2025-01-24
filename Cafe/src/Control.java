@@ -493,30 +493,36 @@ public class Control {
 								    ArrayList<Integer> _conPrice, int _sumPrice, ArrayList<String> _mobileN) {
 		int i = 0;
 		int index = 0;
+		int reSum = 0;
 		
 		while(i < _mobileN.size()) {
 			if(i == 0) {
 				System.out.println((index+1)+".모바일 번호: " + _mobileN.get(i));
-				System.out.println("메뉴: " + _conMenu.get(i) + "\t개수: " + _conNum.get(i) + "\t가격: " + _conPrice.get(i));
+				System.out.println("메뉴: " + _conMenu.get(i) + "\t\t개수: " + _conNum.get(i) + "\t\t가격: " + _conPrice.get(i));
 				_sumPrice += _conPrice.get(i);
+				reSum += _conPrice.get(i);
 			} else if(_mobileN.get(i) == _mobileN.get((i-1))) {
-				System.out.println("메뉴: " + _conMenu.get(i) + "\t개수: " + _conNum.get(i) + "\t가격: " + _conPrice.get(i));
+				System.out.println("메뉴: " + _conMenu.get(i) + "\t\t개수: " + _conNum.get(i) + "\t\t가격: " + _conPrice.get(i));
 				_sumPrice += _conPrice.get(i);
+				reSum += _conPrice.get(i);
 			} else {
 				System.out.println("총 가격: " + _sumPrice);
 				index += 1;
 				_sumPrice = 0;
 				System.out.println("=========================================================");
 				System.out.println((index+1)+".모바일 번호: " + _mobileN.get(i));
-				System.out.println("메뉴: " + _conMenu.get(i) + "\t개수: " + _conNum.get(i) + "\t가격: " + _conPrice.get(i));
+				System.out.println("메뉴: " + _conMenu.get(i) + "\t\t개수: " + _conNum.get(i) + "\t\t가격: " + _conPrice.get(i));
 				_sumPrice += _conPrice.get(i);
+				reSum += _conPrice.get(i);
 			}
 			i++;
 		}
-		
+		System.out.println("총 가격: " + _sumPrice);
+		System.out.println("=========================================================");
+		System.out.println("진짜 총가격: " + reSum);
+		System.out.println("=========================================================");
 	}
 	
-	// String 유효성 검사 메소드
 	// String 유효성검사 메소드
 	public static boolean strTest(String _str) {
 		
@@ -527,9 +533,7 @@ public class Control {
 		
 		return true;
 	}
-	
-	// Int 유효성 검사 테스트
-	
+
 	// isNaN 메소드
 	public static boolean isNumber(String str) {
 		// null이거나 비어있으면 false
